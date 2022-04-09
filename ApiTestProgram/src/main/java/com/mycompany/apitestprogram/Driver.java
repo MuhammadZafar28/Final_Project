@@ -5,6 +5,8 @@
  */
 package com.mycompany.apitestprogram;
 
+import java.util.Scanner;
+
 /**
  *
  * @author jesus
@@ -15,12 +17,15 @@ public class Driver {
     
     System.out.println("hello world");
     ApiTestProgram api = new ApiTestProgram();
-    api.getDataFromName("MCDONALD'S");
-    
+   // api.getDataFromName("MCDONALD'S");
+   //Test restaurant search by name
+    System.out.println("Restaurant name:");
+    Scanner scan = new Scanner(System.in);
+    String searchName = scan.nextLine();
+    api.getDataFromName(searchName);
+
     var theMap = new MapUI();
     theMap.setUpUI();
-    
-    
     
     }
     
