@@ -22,7 +22,7 @@ public class ApiTestProgram {
      * Creates a local file containing all the data received from the full
      * database. Slow, takes around 2 minutes to write all 360000 lines to file.
      */
-    public static void updateLocalJSONData() {
+    public void updateLocalJSONData() {
         try {
             // Get ALL data in database
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=400000&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");// + "?dba=" + searchName);
@@ -53,7 +53,7 @@ public class ApiTestProgram {
      * results and prints them out to System.out.
      * @param restaurantName The restaurant name.
      */
-    public static void getDataFromName(String restaurantName) {
+    public void getDataFromName(String restaurantName) {
         try {
             //Begin JSON
             String jsonString = "";
@@ -104,7 +104,7 @@ public class ApiTestProgram {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+/*
     public static void main(String[] args) {
             //Test restaurant search by name
             System.out.println("Restaurant name:");
@@ -115,4 +115,5 @@ public class ApiTestProgram {
             //Store full database locally in JSON text file
             //updateLocalJSONData();
     }
+*/
 }

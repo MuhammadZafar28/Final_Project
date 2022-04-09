@@ -26,8 +26,7 @@ import org.jxmapviewer.viewer.TileFactoryInfo;
  */
 public class MapUI {
     
-
-    public static void main(String[] args)
+    public void setUpUI()
     {
         //https://github.com/msteiger/jxmapviewer2
         // my address 
@@ -101,4 +100,5 @@ public class MapUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
 }
