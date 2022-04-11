@@ -7,7 +7,7 @@ package com.groupfour.restaurantmap;
 public class SoQLQuery extends Query {
     private final String endpoint = "https://data.cityofnewyork.us/resource/43nn-pn8j.json";
     
-    public SoQLQuery(String name, Grade grade, String foodType,
+    public SoQLQuery(String dba, Grade grade, String foodType,
             String address, Borough borough, String zipCode) {
         // TODO: implement this!
         // it should build up a valid SoQL query using the endpoint string & the above params

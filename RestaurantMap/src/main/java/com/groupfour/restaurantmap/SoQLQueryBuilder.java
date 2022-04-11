@@ -7,6 +7,6 @@ package com.groupfour.restaurantmap;
 public class SoQLQueryBuilder extends QueryBuilder {
     @Override
     public Query getQuery() {
-        return new SoQLQuery(name, grade, foodType, address, borough, zipCode);
+        return new SoQLQuery(dba, grade, foodType, address, borough, zipCode);
     }
 }

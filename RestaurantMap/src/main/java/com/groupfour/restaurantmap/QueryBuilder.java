@@ -5,15 +5,15 @@ package com.groupfour.restaurantmap;
  * @author ndars
  */
 public abstract class QueryBuilder {
-    protected String name; // the restaurant's CAMIS
+    protected String dba; // the restaurant's name
     protected Grade grade;
     protected String foodType;
     protected String address;
     protected Borough borough;
     protected String zipCode;
     
-    public QueryBuilder setName(String name) {
-        this.name = name;
+    public QueryBuilder setDba(String dba) {
+        this.dba = dba;
         return this;
     }
     
