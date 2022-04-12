@@ -9,36 +9,53 @@ public class APIQuery extends Query {
     
     public APIQuery(String dba, Grade grade, String foodType,
             String address, Borough borough, String zipCode) {
-        // TODO: implement this!
-        // it should build up a valid SoQL query using the endpoint string & the above params
+        
         StringBuilder sb = new StringBuilder();
         sb.append(endpoint).append("?");
         if(null != dba) {
-            dba = dba.replace(' ', '+');
+            dba = dba.replace(' ', '+').toUpperCase();
             sb.append("dba=").append(dba).append("&");
         }
         if(null != grade) {
-            // needs to be modified; api uses 'Z' for pending, 'N' for not graded, 'P' for grade pending issued on reopening
-            // also, if a user enters grade A, they expect to get a restaurant which is CURRENTLY graded A
-            // have to change this to use SoQL to find only restaurants with a most recent inspection of the given grade
-            String gradeAsStr = grade.name();
-            sb.append("grade=").append(gradeAsStr).append("&");
+            // TODO: make grades work!
+            // if a user enters grade B, they expect to get a restaurant which is CURRENTLY graded B
+            // the naive filter solution will just return rows for any B graded inspection, regardless of how long ago it was
+            // have to make this use SoQL to find only restaurants with a most recent inspection of the given grade
         }
         if(null != foodType) {
             foodType = foodType.replace(' ', '+');
             sb.append("cuisine_description=").append(foodType).append("&");
         }
         if(null != address) {
-            // needs to be modified; api uses separate building & street fields
+            // takes the first "word" of the address as the building number and the rest as the street
+            address = address.toUpperCase();
+            String building = "";
+            String street = "";
+            for(int i = 0; i < address.length(); i++) {
+                if(address.charAt(i) == ' ') {
+                    building = address.substring(0, i);
+                    street = address.substring(i, address.length());
+                    break;
+                }
+            }
+            street = street.trim().replace(' ', '+');
+            sb.append("building=").append(building).append("&");
+            sb.append("street=").append(street).append("&");
         }
         if(null != borough) {
-            String boroughAsStr = borough.name();
+            String boroughAsStr = borough.toString();
+            boroughAsStr = boroughAsStr.replace(' ', '+');
             sb.append("boro=").append(boroughAsStr).append("&");
         }
         if(null != zipCode) {
             zipCode = zipCode.replace(' ', '+');
             sb.append("zipcode=").append(zipCode).append("&");
         }
-       query = sb.toString();
+        
+        query = sb.toString();
+        
+        if(query.endsWith("&")) {
+            query = query.substring(0,query.length()-1);
+        }
     }
 }
