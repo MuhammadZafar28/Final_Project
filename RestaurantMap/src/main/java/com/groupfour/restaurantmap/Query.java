@@ -5,7 +5,7 @@ package com.groupfour.restaurantmap;
  * @author ndars
  */
 public abstract class Query {
-    private String query;
+    protected String query;
 
     @Override
     public String toString() {
