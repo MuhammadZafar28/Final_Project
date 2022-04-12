@@ -18,6 +18,18 @@ public enum Grade {
             case A: return "A";
             case B: return "B";
             case C: return "C";
+            case NOT_YET_GRADED: return "Not yet graded";
+            case GRADE_PENDING: return "Grade pending";
+            case GRADE_PENDING_ISSUED_ON_REOPENING: return "Grade pending issued on reopening";
+            default: throw new IllegalArgumentException();
+        }
+    }
+    
+    public String inQueryFormat() {
+        switch(this) {
+            case A: return "A";
+            case B: return "B";
+            case C: return "C";
             case NOT_YET_GRADED: return "N";
             case GRADE_PENDING: return "Z";
             case GRADE_PENDING_ISSUED_ON_REOPENING: return "P";
