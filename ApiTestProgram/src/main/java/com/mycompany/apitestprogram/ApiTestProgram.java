@@ -104,9 +104,7 @@ public class ApiTestProgram {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-<<<<<<< Updated upstream
 
-=======
     
     /**
      * Queries the database API using a restaurant name, getting the latest grade
@@ -155,7 +153,7 @@ public class ApiTestProgram {
     }
     
 /*
->>>>>>> Stashed changes
+
     public static void main(String[] args) {
             //Test restaurant search by name
             System.out.println("Restaurant name:");
