@@ -57,7 +57,7 @@ public class ApiTestProgram {
         try {
             //Begin JSON
             String jsonString = "";
-
+            restaurantName.replace(" ", "+");
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
                     + "?dba=" + restaurantName 
@@ -104,7 +104,58 @@ public class ApiTestProgram {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+<<<<<<< Updated upstream
 
+=======
+    
+    /**
+     * Queries the database API using a restaurant name, getting the latest grade
+     * result and prints them out to System.out.
+     * @param restaurantName The restaurant name.
+     */
+    public void getLatestGradeDataFromName(String restaurantName) {
+        try {
+            String jsonString = "";
+            restaurantName.replace(" ", "+");
+            // App token is Dxorb7ZOjkabbBiII4JMJhkQu
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
+                    + "?$select=camis,dba"
+                    + "&$where=dba+LIKE+%27" + restaurantName+"%27" //%27 is encoding for ' character
+                    + "&$group=camis,dba"
+                    + "&$order=camis"
+                    + "&$limit=1000"
+                            + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            // open connection
+            conn.connect();
+            // read response
+            BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            System.out.println("Response received.");
+
+            while ((inputLine = input.readLine()) != null) {
+                jsonString += inputLine;
+                System.out.println(inputLine);
+            }
+
+            // put response into json array
+            JsonArray response = (JsonArray) new JsonParser().parse(jsonString);
+            // iterate over the array to process each line
+            
+
+            // close connection
+            conn.disconnect();
+
+        } catch (JsonSyntaxException ex) {
+            System.err.println(ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+/*
+>>>>>>> Stashed changes
     public static void main(String[] args) {
             //Test restaurant search by name
             System.out.println("Restaurant name:");
