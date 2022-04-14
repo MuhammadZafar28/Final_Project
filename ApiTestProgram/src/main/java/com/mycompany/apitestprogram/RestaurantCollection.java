@@ -6,8 +6,12 @@ package com.mycompany.apitestprogram;
 
 /**
  *
+ * 
+ * 
  * @author jesusalvarado
  */
 public class RestaurantCollection {
+    
+    public Restaurant restaurants[];
     
 }

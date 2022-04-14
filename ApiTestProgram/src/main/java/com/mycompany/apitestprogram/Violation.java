@@ -9,5 +9,6 @@ package com.mycompany.apitestprogram;
  * @author jesusalvarado
  */
 public class Violation {
+    public String desc;
     
 }

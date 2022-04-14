@@ -10,4 +10,18 @@ package com.mycompany.apitestprogram;
  */
 public class Restaurant {
     
+    public String name;
+    public String address;
+    public String foodType;
+    public float lattitude, longitude ;
+    public char grade;
+    public String description;
+    public Inspection inspections[];
+    
+    
+    public Restaurant(){
+    
+    }
+    
+    
 }

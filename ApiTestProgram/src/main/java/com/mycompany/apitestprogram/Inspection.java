@@ -9,5 +9,8 @@ package com.mycompany.apitestprogram;
  * @author jesusalvarado
  */
 public class Inspection {
+    public String date;
+    public char grade;
+    public Violation violations[];
     
 }
