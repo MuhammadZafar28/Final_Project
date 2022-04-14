@@ -117,10 +117,12 @@ public class ApiTestProgram {
             restaurantName.replace(" ", "+");
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
-                    + "?$select=camis,dba"
-                    + "&$where=dba+LIKE+%27" + restaurantName+"%27" //%27 is encoding for ' character
-                    + "&$group=camis,dba"
-                    + "&$order=camis"
+                    + "?$select=camis,dba,latitude,longitude,grade_date,grade"
+                    + "&$where=dba+LIKE+%27" + restaurantName + "%27"//+ "in("
+                       // +"&$select=*"
+                      //  +"$where=dba+LIKE+%27" + restaurantName + "%27" //%27 is encoding for ' character
+                    + "&$group=camis,dba,latitude,longitude,grade_date,grade"
+                    + "&$order=camis,grade_date+desc"
                     + "&$limit=1000"
                             + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -164,4 +166,5 @@ public class ApiTestProgram {
             //Store full database locally in JSON text file
             //updateLocalJSONData();
     }
+*/
 }
