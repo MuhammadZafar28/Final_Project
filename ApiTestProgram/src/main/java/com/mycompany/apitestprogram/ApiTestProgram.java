@@ -113,8 +113,11 @@ public class ApiTestProgram {
      */
     public void getLatestGradeDataFromName(String restaurantName) {
         try {
-            String jsonString = "";
-            restaurantName.replace(" ", "+");
+            //URL encode special characters in restaurant name to work in API
+            restaurantName = restaurantName.replaceAll("\\s", "\\+"); //replace all spaces with +
+            restaurantName = restaurantName.replaceAll("\\'", "%27%27"); //replace ' with %27%27
+            restaurantName = restaurantName.toUpperCase();
+
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
                     + "?$select=camis,dba,latitude,longitude,grade_date,grade"
@@ -133,7 +136,7 @@ public class ApiTestProgram {
             BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             String inputLine;
             System.out.println("Response received.");
-
+            String jsonString = "";
             while ((inputLine = input.readLine()) != null) {
                 jsonString += inputLine;
                 System.out.println(inputLine);
