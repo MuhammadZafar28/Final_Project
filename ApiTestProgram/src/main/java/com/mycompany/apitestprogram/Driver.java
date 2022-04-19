@@ -12,21 +12,25 @@ import java.util.Scanner;
  * @author jesus
  */
 public class Driver {
-    
-    public static void main(String[] args){
-    
-    System.out.println("hello world");
-    ApiTestProgram api = new ApiTestProgram();
-   // api.getDataFromName("MCDONALD'S");
-   //Test restaurant search by name
-    System.out.println("Restaurant name:");
-    Scanner scan = new Scanner(System.in);
-    String searchName = scan.nextLine();
-    //api.getDataFromName(searchName);
-    api.getLatestGradeDataFromName(searchName);
+
+    public static void main(String[] args) {
+
+        System.out.println("hello world");
+        ApiTestProgram api = new ApiTestProgram();
+
+        //Test restaurant search by name
+        // api.getDataFromName("MCDONALD'S");
+        //System.out.println("Restaurant name:");
+        //Scanner scan = new Scanner(System.in);
+        //String searchName = scan.nextLine();
+        //api.getDataFromName(searchName);
+        //api.getLatestGradeDataFromName(searchName);
+        // test by zip
+        //api.getDataFromZip("10024");
+        // test by address
+        api.getDataFromAddress("570","lexington avenue");
 //    var theMap = new MapUI();
 //    theMap.setUpUI();
-    
     }
-    
+
 }

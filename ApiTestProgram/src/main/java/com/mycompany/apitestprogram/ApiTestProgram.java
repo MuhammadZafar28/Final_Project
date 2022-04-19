@@ -20,12 +20,13 @@ public class ApiTestProgram {
 
     /**
      * Creates a local file containing all the data received from the full
-     * database. Slow, takes around 2 minutes to write all 360000 lines to file.
+     * database. Slow, takes around 2 minutes to write all 300000+ lines to file
+     * depending on network speeds.
      */
-    public static void updateLocalJSONData() {
+    public void updateLocalJSONData() {
         try {
             // Get ALL data in database
-            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=400000&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");// + "?dba=" + searchName);
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json?$limit=400000&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             // open connection
@@ -50,9 +51,10 @@ public class ApiTestProgram {
 
     /**
      * Queries the database API using a restaurant name, getting the first 1000
-     * results and prints them out to System.out.
+     * results. Also prints them out to System.out.
      *
      * @param restaurantName The restaurant name.
+     * @return Returns a JSON Array with the results of the search.
      */
     public JsonArray getDataFromName(String restaurantName) {
         JsonArray response = null;
@@ -114,9 +116,10 @@ public class ApiTestProgram {
 
     /**
      * Queries the database API using a restaurant name, getting the latest
-     * grade result and prints them out to System.out.
+     * grade result. Also prints them out to System.out.
      *
      * @param restaurantName The restaurant name.
+     * @return Returns a JSON Array with the results of the search.
      */
     public JsonArray getLatestGradeDataFromName(String restaurantName) {
         JsonArray response = null;
@@ -129,12 +132,10 @@ public class ApiTestProgram {
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
                     + "?$select=camis,dba,latitude,longitude,grade_date,grade"
-                    + "&$where=dba+LIKE+%27" + restaurantName + "%27"//+ "in("
-                    // +"&$select=*"
-                    //  +"$where=dba+LIKE+%27" + restaurantName + "%27" //%27 is encoding for ' character
+                    + "&$where=dba+LIKE+%27" + restaurantName + "%27"
                     + "&$group=camis,dba,latitude,longitude,grade_date,grade"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=1000"
+                    + "&$limit=40000"
                     + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -163,7 +164,105 @@ public class ApiTestProgram {
         }
         return response;
     }
+    
+    /**
+     * Queries the database API using a restaurant street address, getting the latest
+     * grade result. Also prints them out to System.out.
+     *
+     * @param building The building number of the restaurant.
+     * @param street The name of the street the restaurant is on (ie, Main Street).
+     * @return Returns a JSON Array with the results of the search.
+     */
+    public JsonArray getDataFromAddress(String building, String street) {
+        JsonArray response = null;
+        try {
+            //URL encode special characters in street name to work in API
+            street = street.replaceAll("\\s", "\\+"); //replace all spaces with +
+            street = street.replaceAll("\\'", "%27%27"); //replace ' with %27%27
+            street = street.toUpperCase();
 
+            // App token is Dxorb7ZOjkabbBiII4JMJhkQu
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+                    + "?$select=camis,dba,building,street,latitude,longitude,grade_date,grade"
+                    + "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27"
+                    + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade"
+                    + "&$order=camis,grade_date+desc"
+                    + "&$limit=40000"
+                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            // open connection
+            conn.connect();
+            // read response
+            BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            System.out.println("Response received.");
+            String jsonString = "";
+            while ((inputLine = input.readLine()) != null) {
+                jsonString += inputLine;
+                System.out.println(inputLine);
+            }
+
+            // put response into json array
+            response = (JsonArray) new JsonParser().parse(jsonString);
+            // iterate over the array to process each line
+
+            // close connection
+            conn.disconnect();
+        } catch (JsonSyntaxException ex) {
+            System.err.println(ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return response;
+    }
+    
+    /**
+     * Queries the database API using a zip code, getting the latest grade result
+     * of all restaurants matching the zip code.
+     *
+     * @param restaurantZip The zip code of the restaurant.
+     * @return Returns a JSON Array with the results of the search.
+     */
+    public JsonArray getDataFromZip(String restaurantZip) {
+        JsonArray response = null;
+        try {
+          
+            // App token is Dxorb7ZOjkabbBiII4JMJhkQu
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+                    + "?$select=camis,dba,zipcode,latitude,longitude,grade_date,grade"
+                    + "&$where=zipcode+LIKE+%27" + restaurantZip + "%27"
+                    + "&$group=camis,dba,zipcode,latitude,longitude,grade_date,grade"
+                    + "&$order=camis,grade_date+desc"
+                    + "&$limit=400000"
+                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            // open connection
+            conn.connect();
+            // read response
+            BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String inputLine;
+            System.out.println("Response received.");
+            String jsonString = "";
+            while ((inputLine = input.readLine()) != null) {
+                jsonString += inputLine;
+                System.out.println(inputLine);
+            }
+
+            // put response into json array
+            response = (JsonArray) new JsonParser().parse(jsonString);
+            // iterate over the array to process each line
+
+            // close connection
+            conn.disconnect();
+        } catch (JsonSyntaxException ex) {
+            System.err.println(ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return response;
+    }
     /*
 
     public static void main(String[] args) {
