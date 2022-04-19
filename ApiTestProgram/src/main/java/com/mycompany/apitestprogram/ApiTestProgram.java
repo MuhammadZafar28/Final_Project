@@ -54,32 +54,37 @@ public class ApiTestProgram {
      *
      * @param restaurantName The restaurant name.
      */
-    public static void getDataFromName(String restaurantName) {
+    public JsonArray getDataFromName(String restaurantName) {
+        JsonArray response = null;
         try {
-            //Begin JSON
-            String jsonString = "";
-            restaurantName.replace(" ", "+");
+            // format restaurantName
+            restaurantName = restaurantName.replaceAll("\\s", "\\+"); //replace all spaces with +
+            restaurantName = restaurantName.replaceAll("\\'", "%27%27"); //replace ' with %27%27
+            restaurantName = restaurantName.toUpperCase();
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
             URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
                     + "?dba=" + restaurantName
-                    + "&$limit=1000"
+                    + "&$limit=40000"  // Arbitrary limit. Needed because default is only 1000. Assuming 40,000 is enough to get all matching lines
                     + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             // open connection
             conn.connect();
+
             // read response
             BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             String inputLine;
             System.out.println("Response received.");
 
+            // Parsing JSON from input and putting into json array
+            String jsonString = "";
             while ((inputLine = input.readLine()) != null) {
                 jsonString += inputLine;
             }
+            response = (JsonArray) new JsonParser().parse(jsonString);
 
-            // put response into json array
-            JsonArray response = (JsonArray) new JsonParser().parse(jsonString);
-            // iterate over the array to process each line
+            // example of iterating over the array to process each line
+            /*
             System.out.println("Latitude and Longitudes of " + restaurantName);
             for (int i = 0; i < response.size(); i++) {
 
@@ -95,7 +100,7 @@ public class ApiTestProgram {
                         + " Score: " + response.get(i).getAsJsonObject().get("grade"));
 
             }
-
+             */
             // close connection
             conn.disconnect();
 
@@ -104,6 +109,7 @@ public class ApiTestProgram {
         } catch (IOException ex) {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return response;
     }
 
     /**
