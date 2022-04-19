@@ -41,16 +41,17 @@ public class ApiTestProgram {
                 System.out.println("...");
             }
             writer.close();
-        } catch (MalformedURLException ex ) {
+        } catch (MalformedURLException ex) {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     /**
-     * Queries the database API using a restaurant name, getting the first 1000 
+     * Queries the database API using a restaurant name, getting the first 1000
      * results and prints them out to System.out.
+     *
      * @param restaurantName The restaurant name.
      */
     public static void getDataFromName(String restaurantName) {
@@ -59,10 +60,10 @@ public class ApiTestProgram {
             String jsonString = "";
             restaurantName.replace(" ", "+");
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
-            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
-                    + "?dba=" + restaurantName 
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
+                    + "?dba=" + restaurantName
                     + "&$limit=1000"
-                            + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
+                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             // open connection
@@ -105,13 +106,14 @@ public class ApiTestProgram {
         }
     }
 
-    
     /**
-     * Queries the database API using a restaurant name, getting the latest grade
-     * result and prints them out to System.out.
+     * Queries the database API using a restaurant name, getting the latest
+     * grade result and prints them out to System.out.
+     *
      * @param restaurantName The restaurant name.
      */
-    public void getLatestGradeDataFromName(String restaurantName) {
+    public JsonArray getLatestGradeDataFromName(String restaurantName) {
+        JsonArray response = null;
         try {
             //URL encode special characters in restaurant name to work in API
             restaurantName = restaurantName.replaceAll("\\s", "\\+"); //replace all spaces with +
@@ -119,15 +121,15 @@ public class ApiTestProgram {
             restaurantName = restaurantName.toUpperCase();
 
             // App token is Dxorb7ZOjkabbBiII4JMJhkQu
-            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json" 
+            URL url = new URL("https://data.cityofnewyork.us/resource/43nn-pn8j.json"
                     + "?$select=camis,dba,latitude,longitude,grade_date,grade"
                     + "&$where=dba+LIKE+%27" + restaurantName + "%27"//+ "in("
-                       // +"&$select=*"
-                      //  +"$where=dba+LIKE+%27" + restaurantName + "%27" //%27 is encoding for ' character
+                    // +"&$select=*"
+                    //  +"$where=dba+LIKE+%27" + restaurantName + "%27" //%27 is encoding for ' character
                     + "&$group=camis,dba,latitude,longitude,grade_date,grade"
                     + "&$order=camis,grade_date+desc"
                     + "&$limit=1000"
-                            + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
+                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             // open connection
@@ -143,21 +145,20 @@ public class ApiTestProgram {
             }
 
             // put response into json array
-            JsonArray response = (JsonArray) new JsonParser().parse(jsonString);
+            response = (JsonArray) new JsonParser().parse(jsonString);
             // iterate over the array to process each line
-            
 
             // close connection
             conn.disconnect();
-
         } catch (JsonSyntaxException ex) {
             System.err.println(ex);
         } catch (IOException ex) {
             Logger.getLogger(ApiTestProgram.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return response;
     }
-    
-/*
+
+    /*
 
     public static void main(String[] args) {
             //Test restaurant search by name
@@ -169,5 +170,5 @@ public class ApiTestProgram {
             //Store full database locally in JSON text file
             //updateLocalJSONData();
     }
-*/
+     */
 }
