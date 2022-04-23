@@ -1,4 +1,4 @@
-package com.mycompany.apitestprogram;
+package com.groupfour.restaurantmap;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
