@@ -4,12 +4,19 @@
  */
 package com.mycompany.apitestprogram;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JTextField;
 import javax.swing.JToolTip;
 
 import org.jxmapviewer.JXMapKit;
@@ -26,13 +33,10 @@ import org.jxmapviewer.viewer.TileFactoryInfo;
  */
 public class MapUI {
     
-
-    public static void main(String[] args)
+    public void setUpUI()
     {
         //https://github.com/msteiger/jxmapviewer2
-        // my address 
-        //https://www.google.com/maps/place/141+Wantagh+Ave,+Levittown,+NY+11756/@40.7177811,-73.501066,17z/data=!3m1!4b1!4m5!3m4!1s0x89c27fda5db235d3:0xe8eafea191418970!8m2!3d40.7177811!4d-73.4988773
-       
+        //https://mvnrepository.com/artifact/org.jxmapviewer/jxmapviewer2/2.6
         //https://web.archive.org/web/20100309081606/http://today.java.net/pub/a/today/2007/10/30/building-maps-into-swing-app-with-jxmapviewer.html
         //https://web.archive.org/web/20100311151851/http://www.openstreetmap.org/
         
@@ -95,10 +99,28 @@ public class MapUI {
         });
 
         // Display the viewer in a JFrame
-        JFrame frame = new JFrame("JXMapviewer2 Example 6");
-        frame.getContentPane().add(jXMapKit);
-        frame.setSize(800, 600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        JFrame mapFrame = new JFrame("JXMapviewer2 Example 6");
+        //mapFrame.setLayout(null);
+        mapFrame.getContentPane().add(jXMapKit);
+        mapFrame.setSize(800, 600);
+        mapFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mapFrame.setVisible(true);
+        
+        BoxLayout layout = new BoxLayout(mapFrame, BoxLayout.Y_AXIS );
+        Container panel1 = new Container();
+        //panel
+        //JTextField textField = new JTextField("This is a text field", 20);
+        //textField.setSize(200, 40);
+       
+        //mapFrame.add(textField, BorderLayout.SOUTH);
+        JButton button = new JButton("I am a button");
+        mapFrame.add(button, BorderLayout.EAST);
+        
+        
+        
+       
+
     }
+    
+
 }
