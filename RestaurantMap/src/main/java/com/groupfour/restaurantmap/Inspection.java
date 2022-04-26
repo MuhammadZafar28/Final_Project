@@ -51,7 +51,7 @@ public class Inspection implements Comparable<Inspection> {
     @Override
     public int hashCode() {
         long rawHash = CAMIS + date.hashCode() + (inspectionType.hashCode() - date.hashCode())/2;
-        return (int)rawHash%Integer.MAX_VALUE;
+        return (int)(rawHash % Integer.MAX_VALUE);
     }
     
     @Override
