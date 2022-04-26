@@ -38,6 +38,11 @@ public class Restaurant {
         this.longitude = longitude;
         this.isShallow = isShallow;
     }
+    
+    @Override
+    public int hashCode() {
+        return CAMIS; // the CAMIS is unique per restaurant
+    }
 
     public int getCAMIS() {
         return CAMIS;
@@ -97,20 +102,6 @@ public class Restaurant {
     
     public boolean isShallow() {
         return isShallow;
-    }
-    
-    @Override
-    public int hashCode() {
-        return CAMIS; // the CAMIS is unique per restaurant
-    }
-    
-    @Override
-    public boolean equals(Object obj) {
-        if(obj == null || this.getClass() != obj.getClass()) {
-            return false;
-        }
-        Restaurant rest = (Restaurant)obj;
-        return this.CAMIS == rest.getCAMIS();
     }
 }
 
