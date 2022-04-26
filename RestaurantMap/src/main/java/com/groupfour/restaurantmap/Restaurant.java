@@ -8,16 +8,16 @@ import java.util.ArrayList;
  */
 public class Restaurant {
 
-    private int CAMIS;
-    private String DBA;
-    private Borough borough;
-    private String building;
-    private String street;
-    private String zipCode;
-    private String phone;
-    private String foodType;
-    private double latitude;
-    private double longitude;
+    private final int CAMIS;
+    private final String DBA;
+    private final Borough borough;
+    private final String building;
+    private final String street;
+    private final String zipCode;
+    private final String phone;
+    private final String foodType;
+    private final double latitude;
+    private final double longitude;
     private ArrayList<Inspection> inspections;
     
     // true if this is a shallow object; i.e. no inspection data is stored, just biographical
@@ -37,11 +37,6 @@ public class Restaurant {
         this.latitude = latitude;
         this.longitude = longitude;
         this.isShallow = isShallow;
-    }
-    
-    @Override
-    public int hashCode() {
-        return CAMIS; // the CAMIS is unique per restaurant
     }
 
     public int getCAMIS() {
@@ -102,6 +97,20 @@ public class Restaurant {
     
     public boolean isShallow() {
         return isShallow;
+    }
+ 
+    @Override
+    public int hashCode() {
+        return CAMIS; // the CAMIS is unique per restaurant
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Restaurant rest = (Restaurant)obj;
+        return rest.getCAMIS() == this.CAMIS;
     }
 }
 
