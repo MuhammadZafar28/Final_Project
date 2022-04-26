@@ -28,7 +28,7 @@ public class Restaurant {
     
     public Restaurant(int CAMIS, String DBA, Borough borough, String building, String street, 
                     String zipCode, String phone, String foodType, double latitude, 
-                    double longitude, Grade currentGrade, boolean isShallow) {
+                    double longitude, Grade currentGrade) {
         this.CAMIS = CAMIS;
         this.DBA = DBA;
         this.borough = borough;
@@ -40,7 +40,7 @@ public class Restaurant {
         this.latitude = latitude;
         this.longitude = longitude;
         this.currentGrade = currentGrade;
-        this.isShallow = isShallow;
+        this.isShallow = true;
         
         inspections = new ArrayList<>();
     }
