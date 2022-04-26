@@ -18,14 +18,17 @@ public class Restaurant {
     private final String foodType;
     private final double latitude;
     private final double longitude;
+    // the grade of the most recent, non-nulled grade inspection; needed to get grade of shallow restaurants
+    private final Grade currentGrade;
+    
     private ArrayList<Inspection> inspections;
     
     // true if this is a shallow object; i.e. no inspection data is stored, just biographical
     private boolean isShallow;
     
     public Restaurant(int CAMIS, String DBA, Borough borough, String building, String street, 
-                    String zipCode, String phone, String foodType, 
-                    double latitude, double longitude, boolean isShallow) {
+                    String zipCode, String phone, String foodType, double latitude, 
+                    double longitude, Grade currentGrade, boolean isShallow) {
         this.CAMIS = CAMIS;
         this.DBA = DBA;
         this.borough = borough;
@@ -36,7 +39,10 @@ public class Restaurant {
         this.foodType = foodType;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.currentGrade = currentGrade;
         this.isShallow = isShallow;
+        
+        inspections = new ArrayList<>();
     }
 
     public int getCAMIS() {
