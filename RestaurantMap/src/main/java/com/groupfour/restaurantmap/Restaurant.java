@@ -1,6 +1,7 @@
 package com.groupfour.restaurantmap;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A class which stores DOHMH restaurant and inspection data.
@@ -89,22 +90,44 @@ public class Restaurant {
         return currentGrade;
     }
     
-    public ArrayList<Inspection> getInspections() throws ShallowObjectException {
-        if(isShallow) {
+    /**
+     * Returns an unmodifiable list of this Restaurant's inspections.
+     * If you want to add to the list, use the provided {@link #addInspection(com.groupfour.restaurantmap.Inspection) addInspection} method instead.
+     * @return
+     * @throws ShallowObjectException if this is a shallow Restaurant
+     * @see #isShallow() for more about shallowness.
+     */
+    public List<Inspection> lookAtInspections() throws ShallowObjectException {
+        if(this.isShallow) {
             throw new ShallowObjectException();
         } else {
             return inspections;
         }
     }
     
-    public void setInspections(ArrayList<Inspection> inspections) {
-        if(inspections == null) {
-            return;
+    /**
+     * Adds the given inspection to this restaurant. The inspection must correspond to this restaurant (i.e. have the same CAMIS) to be successfully added.
+     * @param insp
+     * @return true if the inspection was added, false if not
+     */
+    public boolean addInspection(Inspection insp) {
+        if(this.CAMIS == insp.getCAMIS()) {
+            inspections.add(insp);
+            if(this.isShallow) {
+                isShallow = false;
+            }
+            return true;
+        } else {
+            return false;
         }
-        isShallow = false;
-        this.inspections = inspections;
     }
     
+    /**
+     * Returns the "shallowness" of this restaurant object.
+     * A shallow restaurant contains only biographical data and no inspections.
+     * Inversely, a deep(?) restaurant will contain a nonzero number of inspections.
+     * @return 
+     */
     public boolean isShallow() {
         return isShallow;
     }
@@ -114,6 +137,11 @@ public class Restaurant {
         return CAMIS; // the CAMIS is unique per restaurant
     }
     
+    /**
+     * Returns true iff the the provided restaurant has the same CAMIS.
+     * @param obj
+     * @return 
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj == this) {
