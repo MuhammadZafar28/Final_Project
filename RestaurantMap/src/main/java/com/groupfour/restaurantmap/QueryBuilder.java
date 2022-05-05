@@ -8,7 +8,8 @@ public abstract class QueryBuilder {
     protected String dba; // the restaurant's name
     protected Grade grade;
     protected String foodType;
-    protected String address;
+    protected String building;
+    protected String street;
     protected Borough borough;
     protected String zipCode;
     
@@ -27,11 +28,14 @@ public abstract class QueryBuilder {
         return this;
     }
     
-    public QueryBuilder setAddress(String address) {
-        this.address = address;
+    public QueryBuilder setBuilding(String building) {
+        this.building = building;
         return this;
     }
-    
+    public QueryBuilder setStreet(String street) {
+        this.street = street;
+        return this;
+    }
     public QueryBuilder setBorough(Borough borough) {
         this.borough = borough;
         return this;
