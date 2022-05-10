@@ -4,6 +4,7 @@
     Author     : jesus
 --%>
 
+<%@page import="com.groupfour.therestaurantmap.webapp.Restaurant"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -33,12 +34,19 @@
         crossOrigin: true
       }).addTo(map);
 
-     
-               
-                
+    <% 
+        
+        Restaurant temp = new Restaurant();
+        String myLat = temp.lattitude;
+        String myLon = temp.longitude;
+            %> 
+
     var lat = 40.73;
-    var lon = -73.5;
-      var marker = L.marker([lat,lon]).addTo(map);
+    var lon = -73.5;           
+    var lat2 =  parseFloat(<%= myLat%>);
+    var lon2 = parseFloat(<%= myLon%>);            
+    
+    var marker = L.marker([lat,lon]).addTo(map);
       
       
     </script>
