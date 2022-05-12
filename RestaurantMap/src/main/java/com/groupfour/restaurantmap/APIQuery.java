@@ -11,7 +11,7 @@ public class APIQuery extends Query {
     private final String endpoint = "https://data.cityofnewyork.us/resource/43nn-pn8j.json";
     /* App token for our program isis Dxorb7ZOjkabbBiII4JMJhkQu, must be 
     included at the end of the final URL.*/
-    
+    private final String apiKey = "Dxorb7ZOjkabbBiII4JMJhkQu";
 
     public APIQuery(String dba, Grade grade, String foodType,
             String building, String street, Borough borough, String zipCode) {
@@ -27,8 +27,7 @@ public class APIQuery extends Query {
                     + "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27+AND+dba+LIKE+%27" + dba + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         /* Any restaurant at an exact address and grade, but no specific 
         name (ie, the food court in a mall)*/ 
@@ -39,8 +38,7 @@ public class APIQuery extends Query {
                     + "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         /* Any restaurant at an exact address and food type, but no specific 
         name (ie, the food court in a mall*/  
@@ -52,8 +50,7 @@ public class APIQuery extends Query {
                     + "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // Any restaurant at an exact address, regardless of grade or food type 
         else if (building != null && street != null && zipCode != null) {
@@ -62,8 +59,7 @@ public class APIQuery extends Query {
                     + "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // A specific restaurant on a specific street & zip
         else if (street != null && zipCode != null && dba != null) {
@@ -73,8 +69,7 @@ public class APIQuery extends Query {
                     + "&$where=dba+LIKE+%27" + dba + "%27+AND+street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }  
         // Any restaurant on a specific street with a specific grade
         else if (street != null && zipCode != null && grade != null) {
@@ -84,8 +79,7 @@ public class APIQuery extends Query {
                     + "&$where=grade+LIKE+%27" + grade.inQueryFormat() + "%27+AND+street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // Any restaurant on a specific street with a specific cuisine type
         else if (street != null && zipCode != null && foodType != null) {
@@ -95,8 +89,7 @@ public class APIQuery extends Query {
                     + "&$where=cuisine_description+LIKE+%27" + foodType + "%27+AND+street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // All restaurants on a specific street
         else if (street != null && zipCode != null) {
@@ -105,8 +98,7 @@ public class APIQuery extends Query {
                     + "&$where=street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // A specific restaurant name within a specific zip
         else if (zipCode != null && dba != null) {
@@ -115,8 +107,7 @@ public class APIQuery extends Query {
                     + "&$where=dba+LIKE+%27" + dba + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // Any restaurant in a specific zipcode with a specific grade 
         else if (zipCode != null && grade != null) {
@@ -124,8 +115,7 @@ public class APIQuery extends Query {
                     + "&$where=zipcode+LIKE+%27" + zipCode + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // Any restaurant in a specific zipcode with a specific cuisine type 
         else if (zipCode != null && foodType != null) {
@@ -134,8 +124,7 @@ public class APIQuery extends Query {
                     + "&$where=zipcode+LIKE+%27" + zipCode + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // All restaurants within a specific zip code
         else if (zipCode != null) {
@@ -143,8 +132,7 @@ public class APIQuery extends Query {
                     + "&$where=zipcode+LIKE+%27" + zipCode + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // A specific restaurant name within a specific borough
         else if (borough != null && dba != null) {
@@ -154,8 +142,7 @@ public class APIQuery extends Query {
                     + "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+dba+LIKE+%27" + dba + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // Any restaurant in a specific borough with a specific grade
         else if (borough != null && grade != null) {
@@ -164,8 +151,7 @@ public class APIQuery extends Query {
                     + "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // Any restaurant in a specific borough with a specific cuisine type
         else if (borough != null && foodType != null) {
@@ -175,8 +161,7 @@ public class APIQuery extends Query {
                     + "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         } 
         // All restaurants within a specific borough
         else if (borough != null) {
@@ -185,8 +170,7 @@ public class APIQuery extends Query {
                     + "&$where=boro+LIKE+%27" + formattedBoro+ "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // All restaurants of a specific name and grade within the database
         else if(dba != null && grade != null){
@@ -195,8 +179,7 @@ public class APIQuery extends Query {
                     + "&$where=dba+LIKE+%27" + dba + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // All restaurants with a specific cuisine and grade within the database
         else if(foodType != null && grade != null){
@@ -205,8 +188,7 @@ public class APIQuery extends Query {
                     + "&$where=cuisine_description+LIKE+%27" + dba + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // All restaurants with a specific name within the database
         else if(dba != null){
@@ -215,8 +197,7 @@ public class APIQuery extends Query {
                     + "&$where=dba+LIKE+%27" + dba + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // All restaurants with a specific cuisine type within the database
         else if(foodType != null){
@@ -225,8 +206,7 @@ public class APIQuery extends Query {
                     + "&$where=cuisine_description+LIKE+%27" + foodType + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         // All restaurants with a specific grade within the database
         else if(grade != null){
@@ -234,10 +214,10 @@ public class APIQuery extends Query {
                     + "&$where=grade+LIKE+%27" + grade.inQueryFormat() + "%27"
                     + "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade,cuisine_description"
                     + "&$order=camis,grade_date+desc"
-                    + "&$limit=40000"
-                    + "&$$app_token=Dxorb7ZOjkabbBiII4JMJhkQu";
+                    + "&$limit=40000";
         }
         
+        query += "&$$app_token=" + apiKey;
 
 //      
 //        StringBuilder sb = new StringBuilder();
