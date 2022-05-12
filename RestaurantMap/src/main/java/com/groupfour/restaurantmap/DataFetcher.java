@@ -7,5 +7,6 @@ import java.util.HashMap;
  * @author ndars
  */
 public interface DataFetcher {
-    public HashMap<Integer, Restaurant> fetchData(Query query);
+    public HashMap<Integer, Restaurant> fetchRestaurants(Query query);
+    public Restaurant fetchRestaurant(Query query);
 }
