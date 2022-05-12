@@ -9,7 +9,8 @@ public class TestDriver {
         QueryBuilder qb = new APIQueryBuilder();
         qb.setDba("pizza hut");
         qb.setBorough(Borough.BRONX);
-        qb.setAddress("2829 edson avenue");
+        qb.setBuilding("2829");
+        qb.setStreet("edson avenue");
         qb.setFoodType("Pizza");
         Query q = qb.getQuery();
         System.out.println(q);

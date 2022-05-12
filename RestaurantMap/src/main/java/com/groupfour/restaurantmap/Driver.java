@@ -19,16 +19,16 @@ public class Driver {
         ApiTestProgram api = new ApiTestProgram();
 
         //Test restaurant search by name
-        // api.getDataFromName("MCDONALD'S");
-        //System.out.println("Restaurant name:");
-        //Scanner scan = new Scanner(System.in);
-        //String searchName = scan.nextLine();
+        //api.getDataFromName("MCDONALD'S");
+        System.out.println("Restaurant name:");
+        Scanner scan = new Scanner(System.in);
+        String searchName = scan.nextLine();
         //api.getDataFromName(searchName);
-        //api.getLatestGradeDataFromName(searchName);
+        api.getLatestGradeDataFromName(searchName);
         // test by zip
         //api.getDataFromZip("10024");
         // test by address
-        api.getDataFromAddress("570","lexington avenue");
+        //api.getDataFromAddress("570","lexington avenue");
 //    var theMap = new MapUI();
 //    theMap.setUpUI();
     }

@@ -82,6 +82,7 @@ public class ApiTestProgram {
             String jsonString = "";
             while ((inputLine = input.readLine()) != null) {
                 jsonString += inputLine;
+                System.out.println(inputLine);
             }
             response = (JsonArray) new JsonParser().parse(jsonString);
 

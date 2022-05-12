@@ -7,6 +7,6 @@ package com.groupfour.restaurantmap;
 public class APIQueryBuilder extends QueryBuilder {
     @Override
     public Query getQuery() {
-        return new APIQuery(dba, grade, foodType, address, borough, zipCode);
+        return new APIQuery(dba, grade, foodType, building, street, borough, zipCode);
     }
 }
