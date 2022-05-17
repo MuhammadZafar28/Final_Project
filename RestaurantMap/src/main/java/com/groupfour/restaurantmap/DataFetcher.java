@@ -8,5 +8,5 @@ import java.util.HashMap;
  */
 public interface DataFetcher {
     public HashMap<Integer, Restaurant> fetchRestaurants(Query query);
-    public Restaurant fetchRestaurant(Query query);
+    public Restaurant fetchInspections(Restaurant rest);
 }

@@ -22,4 +22,15 @@ public enum Borough {
             default: throw new IllegalArgumentException();
         }
     }
+    
+    public static Borough asEnum(String input) {
+        switch(input) {
+            case "Bronx": return BRONX;
+            case "Brooklyn": return BROOKLYN;
+            case "Manattan": return MANHATTAN;
+            case "Queens": return QUEENS;
+            case "Staten Island": return STATEN_ISLAND;
+            default: throw new IllegalArgumentException();
+        }
+    }
 }
