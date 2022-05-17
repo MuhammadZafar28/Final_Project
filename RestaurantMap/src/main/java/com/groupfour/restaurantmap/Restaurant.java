@@ -91,18 +91,12 @@ public class Restaurant {
     }
     
     /**
-     * Returns an unmodifiable list of this Restaurant's inspections.
-     * If you want to add to the list, use the provided {@link #addInspection(com.groupfour.restaurantmap.Inspection) addInspection} method instead.
+     * Returns a list of this Restaurant's inspections.
      * @return
-     * @throws ShallowObjectException if this is a shallow Restaurant
      * @see #isShallow() for more about shallowness.
      */
-    public List<Inspection> lookAtInspections() throws ShallowObjectException {
-        if(this.isShallow) {
-            throw new ShallowObjectException();
-        } else {
-            return inspections;
-        }
+    public List<Inspection> getInspections() {
+        return inspections;
     }
     
     /**
@@ -154,5 +148,3 @@ public class Restaurant {
         return rest.getCAMIS() == this.CAMIS;
     }
 }
-
-class ShallowObjectException extends Exception {}

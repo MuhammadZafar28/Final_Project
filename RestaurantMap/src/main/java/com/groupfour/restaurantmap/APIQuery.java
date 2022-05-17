@@ -4,19 +4,19 @@ package com.groupfour.restaurantmap;
  * An class representing API queries to the DOHMH restaurant inspection
  * database.
  *
- * @author ndars
+ * @author Jon-CSC
  */
 public class APIQuery extends Query {
 
-    private final String endpoint = "https://data.cityofnewyork.us/resource/43nn-pn8j.json";
+    private static final String endpoint = "https://data.cityofnewyork.us/resource/43nn-pn8j.json";
     /* App token for our program isis Dxorb7ZOjkabbBiII4JMJhkQu, must be 
     included at the end of the final URL.*/
-    private final String apiKey = "Dxorb7ZOjkabbBiII4JMJhkQu";
-    private final String selectStatement = "?$select=camis,dba,building,street,latitude,longitude,grade_date,grade";
-    private final String groupStatement = "&$group=camis,dba,building,street,latitude,longitude,grade_date,grade";
+    private static final String apiKey = "Dxorb7ZOjkabbBiII4JMJhkQu";
+    private final String selectStatement = "?$select=camis,dba,boro,building,street,zipcode,phone,latitude,longitude,grade_date,grade,cuisine_description";
+    private final String groupStatement = "&$group=camis,dba,boro,building,street,zipcode,phone,latitude,longitude,grade_date,grade,cuisine_description";
     private final String orderStatement = "&$order=camis,grade_date+desc";
     private final String limitStatement = "&$limit=40000";
-    private final String apiKeyStatement = "&$$app_token=" + apiKey;;
+    private static final String apiKeyStatement = "&$$app_token=" + apiKey;;
 
     
     public APIQuery(String dba, Grade grade, String foodType,
@@ -138,13 +138,17 @@ public class APIQuery extends Query {
         }
         // All restaurants with a specific grade within the database
         else if(grade != null){
-            query += "&$where=grade+LIKE+%27" + grade.inQueryFormat() + "%27";
-                    
+            query += "&$where=grade+LIKE+%27" + grade.inQueryFormat() + "%27";               
         }
         
         query += groupStatement + orderStatement + limitStatement + apiKeyStatement;
-        
-
+    }
+    
+    // makes a query that pulls all inspection data for a particular restaurant
+    // yes, i'm aware making it a static method instead of refactoring is hacky leave me alone
+    public static String makeInspectionQuery(int camis) {
+        String inspQuery = endpoint + "?camis=" + camis + apiKeyStatement;
+        return inspQuery;
     }
     
     /**
