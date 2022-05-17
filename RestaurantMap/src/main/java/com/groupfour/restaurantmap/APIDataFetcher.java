@@ -112,8 +112,10 @@ public class APIDataFetcher implements DataFetcher {
                     // optimization: check this before we package the entire inspection, somehow
                     if(inspIndex != -1) {
                         System.out.println("adding violation to existing inspection");
-                       Inspection existingInspection = existingInspections.get(inspIndex);
-                       existingInspection.addViolation(line.get("violation_code").getAsString());
+                        Inspection existingInspection = existingInspections.get(inspIndex);
+                        JsonElement violationCode = line.get("violation_code");
+                        String violationCodeString = (violationCode == null) ? "N/A" : violationCode.getAsString();
+                        existingInspection.addViolation(violationCodeString);
                     } else { // if we don't have this inspection, add it
                         System.out.println("adding inspection");
                         rest.addInspection(newInsp);
@@ -169,7 +171,7 @@ public class APIDataFetcher implements DataFetcher {
     }
     
     private Inspection packageInspection(JsonObject inspectionLine) throws IllegalArgumentException {
-        // pull each attribute we need
+        // pull each attribute
         JsonElement camis = inspectionLine.get("camis");
         JsonElement inspectionDate = inspectionLine.get("inspection_date");
         JsonElement inspectionType = inspectionLine.get("inspection_type");
@@ -180,44 +182,19 @@ public class APIDataFetcher implements DataFetcher {
         JsonElement violationDescription = inspectionLine.get("violation_description");
         
         boolean anyNull = camis == null | inspectionDate == null | inspectionType == null | action == null;
-        
         if(anyNull) {
             throw new IllegalArgumentException("Null CAMIS, date, type, or action are not permitted in Inspection objects");
         }
         
+        // do all the relevant casts
         int camisInt = camis.getAsInt();
         String inspectionDateString = inspectionDate.getAsString();
         String inspectionTypeString = inspectionType.getAsString();
         String actionString = action.getAsString();
-        
-        Grade gradeEnum;
-        if(grade == null) {
-            gradeEnum = Grade.UNKNOWN;
-        } else {
-            gradeEnum = Grade.asEnum(grade.getAsString());
-        }
-        
-        int scoreInt;
-        if(score == null) {
-            scoreInt = -1;
-        } else {
-            scoreInt = score.getAsInt();
-        }
-        
-        String violationCodeString;
-        if(violationCode == null) {
-            violationCodeString = "N/A";
-        } else {
-            violationCodeString = violationCode.getAsString();
-        }
-        
-        String violationDescriptionString;
-        if(violationDescription == null) {
-            violationDescriptionString = "N/A";
-        } else {
-            violationDescriptionString = violationDescription.getAsString();
-        }
-        
+        Grade gradeEnum = (grade == null) ? Grade.UNKNOWN : Grade.asEnum(grade.getAsString());
+        int scoreInt = (score == null) ? -1 : score.getAsInt();
+        String violationCodeString = (violationCode == null) ? "N/A" : violationCode.getAsString();
+        String violationDescriptionString = (violationDescription == null) ? "N/A" : violationDescription.getAsString();
         Inspection insp = new Inspection(camisInt, inspectionDateString,inspectionTypeString, actionString, gradeEnum, scoreInt);
         try {
             insp.addViolation(violationCodeString);
