@@ -36,4 +36,16 @@ public enum Grade {
             default: throw new IllegalArgumentException();
         }
     }
+    
+    public static Grade asEnum(String input) {
+        switch(input) {
+            case "A": return A;
+            case "B": return B;
+            case "C": return C;
+            case "N": return NOT_YET_GRADED;
+            case "Z": return GRADE_PENDING;
+            case "P": return GRADE_PENDING_ISSUED_ON_REOPENING;
+            default: throw new IllegalArgumentException();
+        }
+    }
 }
