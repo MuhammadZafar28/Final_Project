@@ -1,0 +1,297 @@
+17-May-2022 16:50:30.156 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.62
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 31 2022 14:34:15 UTC
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.62.0
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-16.0.2
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           16.0.2+7-67
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:50:30.158 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\logging.properties
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Zeus-PC
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:50:30.166 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\temp
+17-May-2022 16:50:30.172 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+17-May-2022 16:50:30.188 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+17-May-2022 16:50:30.188 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+17-May-2022 16:50:30.201 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+17-May-2022 16:50:30.338 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:50:30.353 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [311] milliseconds
+17-May-2022 16:50:30.390 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+17-May-2022 16:50:30.390 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.62]
+17-May-2022 16:50:30.396 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml]
+17-May-2022 16:50:30.406 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/MyWebApp_May5th] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml] has been ignored
+17-May-2022 16:50:30.599 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml] has finished in [202] ms
+17-May-2022 16:50:30.599 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml]
+17-May-2022 16:50:30.600 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/MyWebDemo] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml] has been ignored
+17-May-2022 16:50:30.709 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-May-2022 16:50:30.712 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml] has finished in [112] ms
+17-May-2022 16:50:30.712 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml]
+17-May-2022 16:50:30.712 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/simple-web-app] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml] has been ignored
+17-May-2022 16:50:30.737 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml] has finished in [25] ms
+17-May-2022 16:50:30.738 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml]
+17-May-2022 16:50:30.738 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/UnitConverter] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml] has been ignored
+17-May-2022 16:50:30.764 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml] has finished in [26] ms
+17-May-2022 16:50:30.764 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\docs]
+17-May-2022 16:50:30.781 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\docs] has finished in [17] ms
+17-May-2022 16:50:30.782 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\examples]
+17-May-2022 16:50:31.061 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\examples] has finished in [279] ms
+17-May-2022 16:50:31.061 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\host-manager]
+17-May-2022 16:50:31.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\host-manager] has finished in [30] ms
+17-May-2022 16:50:31.091 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\manager]
+17-May-2022 16:50:31.120 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\manager] has finished in [29] ms
+17-May-2022 16:50:31.120 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\ROOT]
+17-May-2022 16:50:31.137 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\ROOT] has finished in [17] ms
+17-May-2022 16:50:31.139 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:50:31.163 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [810] milliseconds
+17-May-2022 16:50:36.171 INFO [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:50:36.172 WARNING [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:50:36.189 INFO [http-nio-8080-exec-6] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [18] ms
+17-May-2022 16:50:36.191 INFO [http-nio-8080-exec-7] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProjectApp]] after start() had already been called. The second call will be ignored.
+17-May-2022 16:50:36.750 INFO [http-nio-8080-exec-5] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProjectApp]
+17-May-2022 16:50:36.760 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:50:36.761 WARNING [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:50:36.778 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [18] ms
+17-May-2022 16:50:36.780 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProjectApp]] after start() had already been called. The second call will be ignored.
+17-May-2022 16:51:07.667 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+17-May-2022 16:51:07.668 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:51:07.674 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+17-May-2022 16:51:07.685 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:51:07.687 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:53:38.510 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.62
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 31 2022 14:34:15 UTC
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.62.0
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-16.0.2
+17-May-2022 16:53:38.513 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           16.0.2+7-67
+17-May-2022 16:53:38.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+17-May-2022 16:53:38.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:53:38.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\logging.properties
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Zeus-PC
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:53:38.522 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62
+17-May-2022 16:53:38.523 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\temp
+17-May-2022 16:53:38.525 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.32] using APR version [1.7.0].
+17-May-2022 16:53:38.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+17-May-2022 16:53:38.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+17-May-2022 16:53:38.551 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1n  15 Mar 2022]
+17-May-2022 16:53:38.770 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:53:38.788 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [410] milliseconds
+17-May-2022 16:53:38.824 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+17-May-2022 16:53:38.824 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.62]
+17-May-2022 16:53:38.830 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:53:38.841 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:53:38.862 SEVERE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:729)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:698)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:696)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:690)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1889)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:473)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1618)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:319)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:946)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:772)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:345)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:476)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@17503f6b]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5023)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:726)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\jesus\Documents\NetBeansProjects\FinalProjectApp\target\FinalProjectApp-1.0-SNAPSHOT] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:762)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:719)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+17-May-2022 16:53:38.864 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [33] ms
+17-May-2022 16:53:38.864 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml]
+17-May-2022 16:53:38.865 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/MyWebApp_May5th] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml] has been ignored
+17-May-2022 16:53:39.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebApp_May5th.xml] has finished in [254] ms
+17-May-2022 16:53:39.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml]
+17-May-2022 16:53:39.119 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/MyWebDemo] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml] has been ignored
+17-May-2022 16:53:39.239 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+17-May-2022 16:53:39.242 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\MyWebDemo.xml] has finished in [124] ms
+17-May-2022 16:53:39.242 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml]
+17-May-2022 16:53:39.243 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/simple-web-app] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml] has been ignored
+17-May-2022 16:53:39.278 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\simple-web-app.xml] has finished in [35] ms
+17-May-2022 16:53:39.278 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml]
+17-May-2022 16:53:39.278 WARNING [main] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/UnitConverter] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml] has been ignored
+17-May-2022 16:53:39.307 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\UnitConverter.xml] has finished in [29] ms
+17-May-2022 16:53:39.307 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\docs]
+17-May-2022 16:53:39.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\docs] has finished in [24] ms
+17-May-2022 16:53:39.331 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\examples]
+17-May-2022 16:53:39.637 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\examples] has finished in [306] ms
+17-May-2022 16:53:39.637 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\host-manager]
+17-May-2022 16:53:39.669 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\host-manager] has finished in [32] ms
+17-May-2022 16:53:39.669 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\manager]
+17-May-2022 16:53:39.702 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\manager] has finished in [32] ms
+17-May-2022 16:53:39.702 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\ROOT]
+17-May-2022 16:53:39.718 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\webapps\ROOT] has finished in [16] ms
+17-May-2022 16:53:39.720 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+17-May-2022 16:53:39.743 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [954] milliseconds
+17-May-2022 16:53:42.115 INFO [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProjectApp]
+17-May-2022 16:53:42.134 INFO [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:53:42.135 WARNING [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:53:42.152 INFO [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [18] ms
+17-May-2022 16:53:42.155 INFO [http-nio-8080-exec-7] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProjectApp]] after start() had already been called. The second call will be ignored.
+17-May-2022 16:54:07.671 INFO [http-nio-8080-exec-11] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProjectApp]
+17-May-2022 16:54:07.681 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:54:07.681 WARNING [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:54:07.698 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [17] ms
+17-May-2022 16:54:07.700 INFO [http-nio-8080-exec-13] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProjectApp]] after start() had already been called. The second call will be ignored.
+17-May-2022 16:54:40.258 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProjectApp]
+17-May-2022 16:54:40.264 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+17-May-2022 16:54:40.265 WARNING [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProjectApp] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has been ignored
+17-May-2022 16:54:40.267 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:729)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:698)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:696)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:690)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1889)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:123)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:583)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:473)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1667)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:315)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1162)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1365)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1369)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1347)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.base/java.lang.Thread.run(Thread.java:831)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [org.apache.catalina.webresources.StandardRoot@7b28dd54]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4885)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5023)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:726)
+		... 24 more
+	Caused by: java.lang.IllegalArgumentException: The main resource set specified [C:\Users\jesus\Documents\GitHubProjects\Final_Project\FinalProjectApp\target\FinalProjectApp-1.0-SNAPSHOT] is not valid
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:762)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:719)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 28 more
+17-May-2022 16:54:40.274 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProjectApp.xml] has finished in [10] ms
+17-May-2022 16:56:56.275 INFO [http-nio-8080-exec-17] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 16:56:56.276 WARNING [http-nio-8080-exec-17] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 16:56:56.292 INFO [http-nio-8080-exec-17] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [17] ms
+17-May-2022 16:56:56.294 INFO [http-nio-8080-exec-19] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 16:56:56.853 INFO [http-nio-8080-exec-17] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 16:56:56.862 INFO [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 16:56:56.863 WARNING [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 16:56:56.886 INFO [http-nio-8080-exec-21] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [23] ms
+17-May-2022 16:56:56.888 INFO [http-nio-8080-exec-3] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:00:42.970 INFO [http-nio-8080-exec-31] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:00:42.980 INFO [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:00:42.980 WARNING [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:00:42.997 INFO [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [17] ms
+17-May-2022 17:00:42.998 INFO [http-nio-8080-exec-30] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:00:52.524 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:00:52.534 INFO [http-nio-8080-exec-25] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:00:52.535 WARNING [http-nio-8080-exec-25] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:00:52.551 INFO [http-nio-8080-exec-25] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [17] ms
+17-May-2022 17:00:52.552 INFO [http-nio-8080-exec-28] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:01:04.562 INFO [http-nio-8080-exec-33] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:01:04.572 INFO [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:01:04.573 WARNING [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:01:04.589 INFO [http-nio-8080-exec-28] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [17] ms
+17-May-2022 17:01:04.590 INFO [http-nio-8080-exec-32] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:02:54.960 INFO [http-nio-8080-exec-38] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:02:54.973 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:02:54.974 WARNING [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:02:54.992 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [18] ms
+17-May-2022 17:02:54.993 INFO [http-nio-8080-exec-47] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:03:47.980 INFO [http-nio-8080-exec-43] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:03:48.007 INFO [http-nio-8080-exec-43] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:03:48.204 INFO [http-nio-8080-exec-47] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:03:48.225 INFO [http-nio-8080-exec-47] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:04:17.448 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:04:17.470 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:04:20.593 INFO [http-nio-8080-exec-47] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:04:20.607 INFO [http-nio-8080-exec-45] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:04:20.607 WARNING [http-nio-8080-exec-45] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:04:20.629 INFO [http-nio-8080-exec-45] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [22] ms
+17-May-2022 17:04:20.630 INFO [http-nio-8080-exec-50] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:04:53.714 INFO [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:04:53.736 INFO [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:04:53.911 INFO [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:04:53.932 INFO [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:05:03.880 INFO [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] has started
+17-May-2022 17:05:03.902 INFO [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/FinalProject-RestaurantMap] is completed
+17-May-2022 17:05:08.090 INFO [http-nio-8080-exec-45] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:05:08.101 INFO [http-nio-8080-exec-51] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:05:08.102 WARNING [http-nio-8080-exec-51] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:05:08.124 INFO [http-nio-8080-exec-51] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [23] ms
+17-May-2022 17:05:08.125 INFO [http-nio-8080-exec-55] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
+17-May-2022 17:05:51.151 INFO [http-nio-8080-exec-62] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:05:51.669 INFO [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/FinalProject-RestaurantMap]
+17-May-2022 17:05:51.682 INFO [http-nio-8080-exec-66] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml]
+17-May-2022 17:05:51.683 WARNING [http-nio-8080-exec-66] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/FinalProject-RestaurantMap] in deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has been ignored
+17-May-2022 17:05:51.704 INFO [http-nio-8080-exec-66] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\jesus\Documents\GitHubProjects\Final_Project\apache-tomcat-9.0.62\conf\Catalina\localhost\FinalProject-RestaurantMap.xml] has finished in [22] ms
+17-May-2022 17:05:51.705 INFO [http-nio-8080-exec-51] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/FinalProject-RestaurantMap]] after start() had already been called. The second call will be ignored.
