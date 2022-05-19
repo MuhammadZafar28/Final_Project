@@ -43,7 +43,7 @@
          </font></Text>
       <TextField fx:id="tf2" layoutX="268.0" layoutY="147.0" prefHeight="25.0" prefWidth="188.0" promptText="Enter grade (A - C), or Borough" />
       <Button fx:id="gButton" disable="true" layoutX="476.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#onButtonPress" text="Grade" />
-      <ChoiceBox fx:id="choiceB" layoutX="268.0" layoutY="189.0" onMouseClicked="#cbox" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceB" layoutX="268.0" layoutY="189.0" prefWidth="150.0" />
       <Text layoutX="164.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cuisine:">
          <font>
             <Font size="20.0" />

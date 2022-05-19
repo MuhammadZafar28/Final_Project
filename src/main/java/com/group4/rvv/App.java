@@ -7,12 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.MenuBar;
-import javafx.scene.layout.BorderPane;
+
 
 /**
  * JavaFX App
@@ -22,18 +19,11 @@ public class App extends Application {
     private static Scene scene;
     @FXML
     private static MenuBar menuBar;
-    @FXML 
-    private static ChoiceBox<String> choiceB;
-    
-    ObservableList list = FXCollections.observableArrayList();
-    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"), 1000, 1000);
         stage.setScene(scene);
         stage.setTitle("Restaurant Violation Visualizer");
-        //loadData();
-        
         stage.show();
     }
 

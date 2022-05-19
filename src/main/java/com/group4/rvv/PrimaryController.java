@@ -606,12 +606,5 @@ public class PrimaryController {
                 textArea.setText(sb.toString());
             }
         }
-    }
-    @FXML
-    private void choiceBoxMethod(){
-       
-    }
-   
-    
-    
+    } 
 }
