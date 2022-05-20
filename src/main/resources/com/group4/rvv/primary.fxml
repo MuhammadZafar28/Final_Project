@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.rvv.PrimaryController">
+<Pane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group4.rvv.PrimaryController">
    <children>
       <BorderPane prefHeight="26.0" prefWidth="1000.0">
          <top>
@@ -28,7 +28,7 @@
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#menuAboutOnClick" text="About" />
                   </items>
                 </Menu>
               </menus>
@@ -65,20 +65,20 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="textRestaurantName" layoutX="255.0" layoutY="255.0" />
-      <TextField fx:id="textBuilding" layoutX="255.0" layoutY="304.0" />
-      <TextField fx:id="textStreet" layoutX="255.0" layoutY="357.0" />
-      <TextField fx:id="textZip" layoutX="501.0" layoutY="304.0" />
-      <Label fx:id="labelRestaurantName" layoutX="170.0" layoutY="259.0" text="Res Name" />
-      <Label layoutX="170.0" layoutY="308.0" text="Building" />
-      <Label layoutX="170.0" layoutY="361.0" text="Street" />
-      <Label layoutX="442.0" layoutY="259.0" text="Boro" />
-      <Label layoutX="442.0" layoutY="308.0" text="Zip" />
-      <Label layoutX="442.0" layoutY="361.0" text="Cuisine" />
-      <Label layoutX="696.0" layoutY="259.0" text="Grade" />
-      <Button fx:id="buttonSearch" layoutX="268.0" layoutY="405.0" mnemonicParsing="false" onAction="#searchOnClick" text="Search" />
-      <ChoiceBox fx:id="choiceBoro" layoutX="500.0" layoutY="255.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="choiceGrade" layoutX="740.0" layoutY="255.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="choiceCuisine" layoutX="500.0" layoutY="357.0" prefWidth="150.0" />
+      <TextField fx:id="textRestaurantName" layoutX="210.0" layoutY="255.0" />
+      <TextField fx:id="textBuilding" layoutX="210.0" layoutY="304.0" />
+      <TextField fx:id="textStreet" layoutX="456.0" layoutY="304.0" />
+      <TextField fx:id="textZip" layoutX="718.0" layoutY="304.0" />
+      <Label fx:id="labelRestaurantName" layoutX="107.0" layoutY="259.0" text="Restaurant Name" />
+      <Label fx:id="labelBuilding" layoutX="153.0" layoutY="308.0" text="Building" />
+      <Label fx:id="labelStreet" layoutX="400.0" layoutY="308.0" text="Street" />
+      <Label fx:id="labelBorough" layoutX="152.0" layoutY="361.0" text="Borough" />
+      <Label fx:id="labelZipCode" layoutX="656.0" layoutY="308.0" text="Zip Code" />
+      <Label fx:id="labelCuisine" layoutX="661.0" layoutY="361.0" text="Cuisine" />
+      <Label fx:id="labelGrade" layoutX="400.0" layoutY="361.0" text="Grade" />
+      <Button fx:id="buttonSearch" layoutX="258.0" layoutY="400.0" mnemonicParsing="false" onAction="#searchOnClick" text="Search" />
+      <ChoiceBox fx:id="choiceBoro" layoutX="209.0" layoutY="357.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceGrade" layoutX="455.0" layoutY="357.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceCuisine" layoutX="717.0" layoutY="357.0" prefWidth="150.0" />
    </children>
 </Pane>

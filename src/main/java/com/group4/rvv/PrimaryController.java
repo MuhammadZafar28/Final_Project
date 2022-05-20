@@ -2,30 +2,26 @@ package com.group4.rvv;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import static com.group4.rvv.Borough.BRONX;
 import static com.group4.rvv.Borough.BROOKLYN;
 import static com.group4.rvv.Borough.MANHATTAN;
 import static com.group4.rvv.Borough.QUEENS;
 import static com.group4.rvv.Borough.STATEN_ISLAND;
-import java.lang.Enum;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 public class PrimaryController {
@@ -611,6 +607,9 @@ public class PrimaryController {
     }
     
     
+    
+    
+    // Start of alternate input option
     @FXML
     TextField textRestaurantName, textBuilding, textStreet, textZip, textBoro;
     @FXML
@@ -627,6 +626,10 @@ public class PrimaryController {
     
     @FXML
     MenuItem menuExit;
+    
+    @FXML
+    MenuItem menuAbout;
+    
     public void initialize(){
         ObservableList<Borough> boroughs = FXCollections.observableArrayList(Borough.values());
         choiceBoro.getItems().add(null);
@@ -720,6 +723,21 @@ public class PrimaryController {
     
     @FXML
     private void menuExitOnClick(){
-        System.exit(0);
+        Platform.exit();
+    }
+    
+    @FXML
+    private void menuAboutOnClick(){
+        Dialog<String> dialog = new Dialog<>();
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().lookupButton(ButtonType.OK).setDisable(false);
+        dialog.setContentText("Created by: \n"
+                + "\n\t Jesus A. B."
+                + "\n\t Natalie D."
+                + "\n\t Jonathan E."
+                + "\n\t Omar M."
+                + "\n\t Muhammad Z."
+                + "\n\n Farmingdale State College - CSC 325 - Spring 2022");
+        dialog.showAndWait();
     }
 }
