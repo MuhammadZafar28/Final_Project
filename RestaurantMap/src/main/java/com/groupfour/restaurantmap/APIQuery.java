@@ -75,6 +75,11 @@ public class APIQuery extends Query {
         else if (street != null && zipCode != null) {
             street = formatString(street);
             query += "&$where=street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27";
+        }
+        else if (street != null && dba != null) {
+            street = formatString(street);
+            dba = formatString(dba);
+            query += "&$where=street+LIKE+%27" + street + "%27+AND+dba+LIKE+%27" + dba + "%27";
         } 
         // A specific restaurant name within a specific zip
         else if (zipCode != null && dba != null) {
