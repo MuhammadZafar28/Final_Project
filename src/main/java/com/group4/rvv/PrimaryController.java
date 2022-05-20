@@ -27,33 +27,33 @@ public class PrimaryController {
     private TextArea textArea;
 
     
-    QueryBuilder qb = new APIQueryBuilder();
-    DataFetcher df = new APIDataFetcher();
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    StringBuilder sb = new StringBuilder();
+    private QueryBuilder qb = new APIQueryBuilder();
+    private DataFetcher df = new APIDataFetcher();
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private StringBuilder sb = new StringBuilder();
 
-    ObservableList list = FXCollections.observableArrayList();
+    private ObservableList list = FXCollections.observableArrayList();
 
     // Start of alternate input option
     @FXML
-    TextField textRestaurantName, textBuilding, textStreet, textZip, textBoro;
+    private TextField textRestaurantName, textBuilding, textStreet, textZip, textBoro;
     @FXML
-    Button buttonSearch;
+    private Button buttonSearch;
 
     @FXML
-    ChoiceBox choiceBoro;
+    private ChoiceBox choiceBoro;
 
     @FXML
-    ChoiceBox choiceGrade;
+    private ChoiceBox choiceGrade;
 
     @FXML
-    ChoiceBox choiceCuisine;
+    private ChoiceBox choiceCuisine;
 
     @FXML
-    MenuItem menuExit;
+    private MenuItem menuExit;
 
     @FXML
-    MenuItem menuAbout;
+    private MenuItem menuAbout;
 
     public void initialize() {
         ObservableList<Borough> boroughs = FXCollections.observableArrayList(Borough.values());
