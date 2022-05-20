@@ -2,12 +2,6 @@ package com.group4.rvv;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import static com.group4.rvv.Borough.BRONX;
-import static com.group4.rvv.Borough.BROOKLYN;
-import static com.group4.rvv.Borough.MANHATTAN;
-import static com.group4.rvv.Borough.QUEENS;
-import static com.group4.rvv.Borough.STATEN_ISLAND;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -136,7 +130,7 @@ public class PrimaryController {
                         String s3 = ("\t\tViolation: " + violCode + "; " + ViolationTable.lookup(violCode) + "\n");
                         sb.append(s3);
                     } catch (InvalidViolationException ex) {
-                        Logger.getLogger(TestDriver.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(PrimaryController.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 //textArea.setText(s1 + s2);
