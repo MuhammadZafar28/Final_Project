@@ -45,7 +45,7 @@ public class APIQuery extends Query {
         else if (building != null && street != null && zipCode != null
                 && foodType != null) {
             street = formatString(street);
-            foodType = formatString(foodType);
+            foodType = formatCuisineString(foodType);
             query += "&$where=building+LIKE+%27" + building + "%27+AND+street+LIKE+%27" + street + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27";
         }
         // Any restaurant at an exact address, regardless of grade or food type 
@@ -68,13 +68,19 @@ public class APIQuery extends Query {
         // Any restaurant on a specific street with a specific cuisine type
         else if (street != null && zipCode != null && foodType != null) {
             street = formatString(street);
-            foodType = formatString(foodType);
+            foodType = formatCuisineString(foodType);
             query += "&$where=cuisine_description+LIKE+%27" + foodType + "%27+AND+street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27";
         } 
         // All restaurants on a specific street
         else if (street != null && zipCode != null) {
             street = formatString(street);
             query += "&$where=street+LIKE+%27" + street + "%27+AND+zipcode+LIKE+%27" + zipCode + "%27";
+        }
+        // A restaurant on a specific street
+        else if (street != null && dba != null) {
+            street = formatString(street);
+            dba = formatString(dba);
+            query += "&$where=street+LIKE+%27" + street + "%27+AND+dba+LIKE+%27" + dba + "%27";
         } 
         // A specific restaurant name within a specific zip
         else if (zipCode != null && dba != null) {
@@ -87,7 +93,7 @@ public class APIQuery extends Query {
         }
         // Any restaurant in a specific zipcode with a specific cuisine type 
         else if (zipCode != null && foodType != null) {
-            foodType = formatString(foodType);
+            foodType = formatCuisineString(foodType);
             query += "&$where=zipcode+LIKE+%27" + zipCode + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27";
         } 
         // All restaurants within a specific zip code
@@ -96,25 +102,21 @@ public class APIQuery extends Query {
         } 
         // A specific restaurant name within a specific borough
         else if (borough != null && dba != null) {
-            String formattedBoro = formatString(borough.toString());
             dba = formatString(dba);
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+dba+LIKE+%27" + dba + "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+dba+LIKE+%27" + dba + "%27";
         } 
         // Any restaurant in a specific borough with a specific grade
         else if (borough != null && grade != null) {
-            String formattedBoro = formatString(borough.toString());
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27";
         } 
         // Any restaurant in a specific borough with a specific cuisine type
         else if (borough != null && foodType != null) {
-            String formattedBoro = formatString(borough.toString());
-            foodType = formatString(foodType);
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27";
+            foodType = formatCuisineString(foodType);
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27";
         } 
         // All restaurants within a specific borough
         else if (borough != null) {
-            String formattedBoro = formatString(borough.toString());
-            query += "&$where=boro+LIKE+%27" + formattedBoro+ "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27";
         }
         // All restaurants of a specific name and grade within the database
         else if(dba != null && grade != null){
@@ -123,7 +125,7 @@ public class APIQuery extends Query {
         }
         // All restaurants with a specific cuisine and grade within the database
         else if(foodType != null && grade != null){
-            foodType = formatString(foodType);
+            foodType = formatCuisineString(foodType);
             query += "&$where=cuisine_description+LIKE+%27" + dba + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27";
         }
         // All restaurants with a specific name within the database
@@ -160,6 +162,20 @@ public class APIQuery extends Query {
         string = string.replaceAll("\\s", "\\+"); //replace all spaces with +
         string = string.replaceAll("\\'", "%27%27"); //replace ' with %27%27
         string = string.toUpperCase();
+        return string;
+    }
+    
+     /**
+     * Replaces characters in strings to their UTF-8 URL encoded equivalents.
+     * @param string
+     * @return A formatted string with replaced characters.
+     */
+    private String formatCuisineString(String string){
+        string = string.replaceAll("\\s", "\\+"); //replace all spaces with +
+        string = string.replaceAll("\\'", "%27%27"); //replace ' with %27%27
+        string = string.replaceAll("\\/", "%2F"); // replace / with %2F
+        string = string.replaceAll("\\-", "%2D"); // replace dashes with %2D
+        string = string.replaceAll("\\,", "%E2%80%9A"); // replace commas with "%E2%80%9A"
         return string;
     }
 }

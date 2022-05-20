@@ -12,6 +12,7 @@ import static com.group4.rvv.Borough.STATEN_ISLAND;
 import java.lang.Enum;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -21,6 +22,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
@@ -42,11 +44,11 @@ public class PrimaryController {
     DataFetcher df = new APIDataFetcher();
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     StringBuilder sb = new StringBuilder();
-    @FXML 
+    @FXML
     private static ChoiceBox<String> choiceB;
-    
+
     ObservableList list = FXCollections.observableArrayList();
-    
+
     /**
      * based on grades.
      *
@@ -55,7 +57,7 @@ public class PrimaryController {
     @FXML
     private void onButtonPress() throws IOException {
         String res = textField.getText();
-        
+
         String response = tf2.getText(); // Response should have textField param
         if (response.equalsIgnoreCase("A")) {
             qb.setDba(res);
@@ -206,7 +208,7 @@ public class PrimaryController {
                 System.out.println();
                 //textArea.isWrapText();
                 textArea.setText(sb.toString());
-            } 
+            }
 
         }
         //textResults.setText(api.getLatestGradeDataFromName(response).toString());
@@ -606,5 +608,118 @@ public class PrimaryController {
                 textArea.setText(sb.toString());
             }
         }
-    } 
+    }
+    
+    
+    @FXML
+    TextField textRestaurantName, textBuilding, textStreet, textZip, textBoro;
+    @FXML
+    Button buttonSearch;
+    
+    @FXML
+    ChoiceBox choiceBoro;
+    
+    @FXML
+    ChoiceBox choiceGrade;
+    
+    @FXML
+    ChoiceBox choiceCuisine;
+    
+    @FXML
+    MenuItem menuExit;
+    public void initialize(){
+        ObservableList<Borough> boroughs = FXCollections.observableArrayList(Borough.values());
+        choiceBoro.getItems().add(null);
+        choiceBoro.getItems().addAll(boroughs);
+        
+        
+        ObservableList<Grade> grades = FXCollections.observableArrayList(Grade.values());
+        choiceGrade.getItems().add(null);
+        choiceGrade.getItems().addAll(grades);
+        
+        
+        ObservableList<String> cuisines = 
+                FXCollections.observableArrayList("African","American","Asian/Asian Fusion",
+                        "Bagels/Pretzels","Bakery Products/Desserts","Bangladeshi","Barbecue",
+                        "Bottled Beverages","Brazilian","Caribbean","Chicken","Chinese",
+                        "Chinese/Japanese","Coffee/Tea","Creole","Donuts","Filipino",
+                        "French","Frozen Desserts","Greek","Hamburgers","Hawaiian",
+                        "Indian","Irish","Italian","Japanese","Jewish/Kosher",
+                        "Juice, Smoothies, Fruit Salads","Korean",
+                        "Latin American","Mediterranean","Mexican",
+                        "Middle Eastern","Pancakes/Waffles","Pizza","Russian",
+                        "Sandwiches","Spanish","Soul Food","Southeast Asian",
+                        "Steakhouse","Tex-Mex","Thai","Turkish","Vegan",
+                        "Vegetarian");
+        choiceCuisine.getItems().add(null);  
+        choiceCuisine.getItems().addAll(cuisines);
+         
+    }
+    
+    @FXML
+    private void searchOnClick() {
+        textArea.clear();
+        sb = new StringBuilder();
+        QueryBuilder qb = new APIQueryBuilder();
+        DataFetcher df = new APIDataFetcher();
+
+        qb.setDba(!textRestaurantName.getText().isBlank() ? textRestaurantName.getText() : null);
+        qb.setStreet(!textStreet.getText().isBlank() ? textStreet.getText() : null);
+        qb.setBuilding(!textBuilding.getText().isBlank() ? textBuilding.getText() : null);
+        qb.setZipCode(!textZip.getText().isBlank() ? textZip.getText() : null);
+        qb.setBorough(choiceBoro.getValue() != null ? (Borough)choiceBoro.getValue():null);
+        qb.setFoodType(choiceCuisine.getValue() != null ? choiceCuisine.getValue().toString():null);
+        Query q = qb.getQuery();
+        System.out.println(q);
+
+        HashMap<Integer, Restaurant> restaurants = df.fetchRestaurants(q);
+        for (Restaurant rest : restaurants.values()) {
+            // peek at all the biographical fields
+            String s1 = ("\n"
+                    + "CAMIS: " + rest.getCAMIS() + "\n"
+                    + "DBA: " + rest.getDBA() + "\n"
+                    + "Borough: " + rest.getBorough() + "\n"
+                    + "Building: " + rest.getBuilding() + "\n"
+                    + "Street: " + rest.getStreet() + "\n"
+                    + "Zip Code: " + rest.getZipCode() + "\n"
+                    + "Phone: " + rest.getPhone() + "\n"
+                    + "Food Type: " + rest.getFoodType() + "\n"
+                    + "Lat: " + rest.getLatitude() + "\n"
+                    + "Long: " + rest.getLongitude() + "\n"
+                    + "Current grade: " + rest.getCurrentGrade());
+            sb.append(s1);
+
+            for (Inspection i : df.fetchInspections(rest).getInspections()) {
+                // peek at all the inspection fields
+                String s2 = ("\n"
+                        + "\tInsp date: " + i.getDate() + "\n"
+                        + "\tInsp type: " + i.getInspectionType() + "\n"
+                        + "\tAction: " + i.getAction() + "\n"
+                        + "\tGrade: " + i.getGrade() + "\n"
+                        + "\tScore: " + i.getScore() + "\n");
+                sb.append(s2);
+
+                for (String violCode : i.lookAtViolationCodes()) {
+                    try {
+                        String s3 = ("\t\tViolation: " + violCode + "; " + ViolationTable.lookup(violCode) + "\n");
+                        sb.append(s3);
+                    } catch (InvalidViolationException ex) {
+                        Logger.getLogger(TestDriver.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                //textArea.setText(s1 + s2);
+                System.out.println();
+            }
+            //textArea.setText(restaurants.values().toString());
+            System.out.println();
+            //textArea.isWrapText();
+           
+        }
+        textArea.setText(sb.toString());
+    }
+    
+    @FXML
+    private void menuExitOnClick(){
+        System.exit(0);
+    }
 }
