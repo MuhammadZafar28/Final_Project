@@ -101,25 +101,23 @@ public class APIQuery extends Query {
         } 
         // A specific restaurant name within a specific borough
         else if (borough != null && dba != null) {
-            String formattedBoro = formatString(borough.toString());
+            
             dba = formatString(dba);
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+dba+LIKE+%27" + dba + "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+dba+LIKE+%27" + dba + "%27";
         } 
         // Any restaurant in a specific borough with a specific grade
         else if (borough != null && grade != null) {
-            String formattedBoro = formatString(borough.toString());
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27";
+            
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+grade+LIKE+%27" + grade.inQueryFormat() + "%27";
         } 
         // Any restaurant in a specific borough with a specific cuisine type
         else if (borough != null && foodType != null) {
-            String formattedBoro = formatString(borough.toString());
             foodType = formatString(foodType);
-            query += "&$where=boro+LIKE+%27" + formattedBoro + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27+AND+cuisine_description+LIKE+%27" + foodType + "%27";
         } 
         // All restaurants within a specific borough
         else if (borough != null) {
-            String formattedBoro = formatString(borough.toString());
-            query += "&$where=boro+LIKE+%27" + formattedBoro+ "%27";
+            query += "&$where=boro+LIKE+%27" + borough.toString() + "%27";
         }
         // All restaurants of a specific name and grade within the database
         else if(dba != null && grade != null){
